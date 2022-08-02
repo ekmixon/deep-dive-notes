@@ -58,9 +58,9 @@ def get_episode_from_yt(video_id):
     date_matches = re.search(date_regex, response.text)
     title_matches = re.search(title_regex, response.text)
     return {
-        "date": date_matches.group(1),
-        "description": description_matches.group(1).replace("\\n", "\n"),
-        "title": title_matches.group(1).replace("#adafruit", ""),
+        "date": date_matches[1],
+        "description": description_matches[1].replace("\\n", "\n"),
+        "title": title_matches[1].replace("#adafruit", ""),
     }
 
 
